@@ -1,3 +1,1 @@
-Xin chào tôi tên Nguyên 
-
-email là nguyenqk@mobio.io
+Xin chào tôi tên Nguyên - Email: nguyenqk@mobio.io
