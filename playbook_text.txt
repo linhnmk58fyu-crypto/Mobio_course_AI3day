@@ -1,0 +1,305 @@
+Bidding Playbook
+PHẦN 1.  TỔNG QUAN & TỪ ĐIỂN THUẬT NGỮ (INTRODUCTION & GLOSSARY)
+1.1. Mục tiêu của Playbook
+Tài liệu này được xây dựng nhằm mục đích "chuẩn hóa" và "công nghiệp hóa" quá trình làm thầu tại Mobio, với 3 mục tiêu cốt lõi:
+Dành cho người mới (Newbies): Chỉ cần đọc và làm theo đúng guideline là có thể tham gia thực chiến ngay, không bị "ngợp" hay mắc lỗi sai cơ bản.
+Dành cho người cũ (Veterans): Chuẩn hóa quy trình phối hợp, "vá" các lỗ hổng (gaps) đang làm chậm tiến độ hoặc gây rủi ro mất điểm trong hồ sơ.
+Lưu trữ tri thức (Knowledge Base): Biến kinh nghiệm cá nhân từ các vụ thầu lịch sử thành tài sản chung của doanh nghiệp.
+1.2. Định nghĩa Đấu thầu trong ngữ cảnh Mobio (Enterprise BFSI) 
+"Đấu thầu là quá trình lựa chọn nhà thầu để ký kết, thực hiện hợp đồng cung cấp dịch vụ tư vấn, dịch vụ phi tư vấn, mua sắm hàng hóa, xây lắp, lựa chọn nhà đầu tư để ký kết, thực hiện hợp đồng dự án đầu tư kinh doanh trên cơ sở bảo đảm cạnh tranh, công bằng, minh bạch, hiệu quả kinh tế và trách nhiệm giải trình (Theo định nghĩa của Luật Đấu Thầu 2023)."
+Tại Mobio: Với phân khúc khách hàng đa phần là Enterprise (Doanh nghiệp quy mô lớn) thuộc ngành BFSI (Ngân hàng, Tài chính, Chứng khoán, Bảo hiểm), các hợp đồng mang lại doanh thu lớn cho chúng ta gần như 100% đều phải thông qua đấu thầu. Thắng thầu không chỉ là bán được phần mềm, mà là bán sự "an toàn", "tin cậy" và "năng lực thực thi" cho Chủ đầu tư.
+1.3. Từ điển thuật ngữ & Vai trò
+Để đọc hiểu các tài liệu thầu và giao tiếp mượt mà trong nội bộ, mọi thành viên cần nằm lòng các thuật ngữ và vai trò sau:
+A. Các thuật ngữ Đấu thầu cơ bản:
+CĐT (Chủ đầu tư): Đơn vị phát hành gói thầu và mua sắm (VD: SeABank, OCB, LPBank...).
+RFP (Request for Proposal) / HSMT (Hồ sơ mời thầu): Tài liệu mô tả các yêu cầu, tiêu chí lựa chọn sản phẩm và nhà cung cấp từ phía CĐT cho một nhu cầu mua sắm cụ thể.
+Tuyên bố đáp ứng: Bảng trả lời của Mobio đối với từng yêu cầu trong RFP (thường theo các mức: Full, Partial, Customized, Not).
+Làm rõ HSMT: Quá trình đặt câu hỏi bằng văn bản cho CĐT để làm rõ các điểm mờ trong HSMT trước khi nộp thầu.
+T-Minus: Khái niệm đếm ngược thời gian đến deadline nộp thầu (Ví dụ: T-24h là còn 24 giờ nữa phải nộp).
+CR (Change Request): Yêu cầu thay đổi/Tùy biến phát sinh ngoài phạm vi chuẩn.
+B. Các thuật ngữ Kỹ thuật / Nghiệp vụ (Thường gặp trong thầu BFSI):
+SaaS (Software as a Service): Mô hình cung cấp phần mềm dạng dịch vụ.
+On-premise: Triển khai phần mềm trực tiếp trên máy chủ vật lý của ngân hàng.
+Cloud Native: Giải pháp được xây dựng để chạy tối ưu trên môi trường Điện toán đám mây (Sử dụng các Native Services của AWS, Azure...).
+BCP & DRP: Kế hoạch kinh doanh liên tục (Business Continuity Plan) & phục hồi sau thảm họa (Disaster Recovery Plan).
+OCR (Optical Character Recognition): Công nghệ nhận diện ký tự quang học (Thường dùng để đọc CCCD, giấy phép kinh doanh).
+C. Ma trận Vai trò nội bộ Mobio (RACI Roles):
+Mỗi gói thầu sẽ là một chiến dịch, và mỗi người có một vị trí chiến đấu rõ ràng:
+PD (Project Delivery) - Primary Bid Manager: Là "Nhạc trưởng" của gói thầu. Chịu trách nhiệm tổng quan, điều phối các team, xử lý yêu cầu về năng lực triển khai, pháp lý và rà soát format cuối cùng.
+PO (Product Owner): Phụ trách phân tích, bóc tách và viết Tuyên bố đáp ứng cho Yêu cầu Nghiệp vụ của CĐT.
+EA (Enterprise Architect) / SA (Solution Architect): Phụ trách phân tích và viết Tuyên bố đáp ứng cho Yêu cầu Kỹ thuật, Bảo mật, Hạ tầng và vẽ sơ đồ Kiến trúc hệ thống.
+AM (Account Manager / Sales): Phụ trách đánh giá rủi ro, nắm bắt "insight" của CĐT, xây dựng chiến lược giá và báo giá (Pricing).
+Approver (Người chịu trách nhiệm cuối/Ban Giám đốc):
+Anh Hùng: Chốt Yêu cầu Nghiệp vụ (PO), Proposal, Báo giá.
+Anh Chung: Chốt Yêu cầu Kỹ thuật (EA).
+Chị Trang: Chốt Năng lực triển khai (PD), support Yêu cầu nghiệp vụ.
+PHẦN 2. QUY TRÌNH ĐẤU THẦU
+Giai đoạn 1: Tiếp nhận & Sàng lọc (Go/No-Go Decision)
+Mục tiêu: Đánh giá cơ hội, nhận diện rủi ro và ra quyết định tham gia vụ thầu hay không.
+1.1. Thu thập & Tổ chức Hồ sơ gốc
+Tải toàn bộ Hồ sơ mời thầu (HSMT/RFP) từ hệ thống hoặc nhận trực tiếp từ khách hàng.
+Đẩy toàn bộ lên folder Cloud Storage của account (Google Drive + Lark) để team cùng truy cập.
+Kiểm tra xem có đủ các file hay không.
+Hồ sơ mời thầu (HSMT) về bản chất là một tài liệu mô tả các yêu cầu, tiêu chí lựa chọn sản phẩm và nhà cung cấp từ phía chủ đầu tư cho một nhu cầu mua sắm cụ thể. HSMT thường gồm:
+Các chỉ dẫn dự thầu: như địa chỉ nộp thầu, quy cách hồ sơ thầu, thời gian đóng thầu, quy trình chấm thầu...
+Các yêu cầu về năng lực pháp lý, tài chính, kinh nghiệm nhà thầu
+Các yêu cầu về phạm vi cung cấp: bao gồm yêu cầu về tính năng nghiệp vụ, yêu cầu về kỹ thuật (kiến trúc, bảo mật...)
+1.2.Trích xuất Nội dung quan trọng & Nhận diện Tiêu chí loại
+💡 Tại Mobio, việc scan hồ sơ vòng 1 do PD phụ trách. Tuy nhiên, khuyến nghị phải có ít nhất 2 PD cùng scan chéo để tránh trường hợp đọc sót/sai thông tin. Kết quả ghi nhận vào File Google Sheet (1) [HSDT] - Tên gói thầu.
+Click the image to view the sheet.
+Các "Bẫy" Tiêu chí loại cần lưu ý:
+Tiêu chí về Năng lực nhân sự:
+Chứng chỉ chuyên môn hiếm: Yêu cầu các chứng chỉ quốc tế rất chuyên sâu mà chỉ một vài đối tác của hãng lớn có (ví dụ: PMP, CCIE, AWS Solutions Architect Professional, hoặc các chứng chỉ về bảo mật như CISSP cho những vị trí không thực sự cần thiết).
+Số năm kinh nghiệm cụ thể: "Trưởng dự án phải có ít nhất 15 năm kinh nghiệm" hoặc "Đã từng triển khai ít nhất 3 dự án tương tự cho cơ quan cấp Bộ".
+Hợp đồng lao động: Yêu cầu nhân sự phải có hợp đồng lao động tại công ty từ 6-12 tháng trở lên (để chặn việc đi thuê chuyên gia bên ngoài).
+Tiêu chí về Kinh nghiệm thực hiện
+Giá trị hợp đồng: Yêu cầu một hợp đồng duy nhất có giá trị bằng 70-80% giá gói thầu hiện tại (trong khi thực tế dự án đó có thể chia nhỏ thành nhiều giai đoạn).
+Tiêu chí về Kỹ thuật và Công nghệ:
+Yêu cầu bắt buộc bàn giao source code: Yêu cầu bắt buộc bàn giao mã nguồn (Điều này rất bất lợi và trái với mô hình SaaS của Mobio)
+Công nghệ lõi độc quyền: Yêu cầu phần mềm phải chạy trên nền tảng cơ sở dữ liệu hoặc hệ điều hành của một hãng cụ thể (ví dụ: Oracle, IBM) mà không chấp nhận các dòng tương đương.
+Chứng chỉ sản phẩm: Yêu cầu phần mềm phải có các chứng chỉ quốc tế như ISO/IEC 25010, CMMI Level 3-5, hoặc các kiểm thử bảo mật (Pentest) từ các đơn vị chỉ định.
+1.3. Đánh giá Khả thi & Chốt Go/No-go
+Nhận diện "Quân xanh, Quân đỏ":
+Đọc Hồ sơ mời thầu (RFP), nếu thấy cấu hình máy chủ đòi hỏi quá thấp, hoặc các tính năng mô tả sơ sài -> Cẩn thận, thầu này đang dọn đường cho Nhóm 3 (Local giá rẻ). Nếu RFP yêu cầu các chứng chỉ quốc tế đặc thù của hãng -> Đang dọn đường cho Nhóm 1 (Global).
+Hành động: Xác nhận lại với AM/Sales
+Phân tích đối thủ: 
+Liệt kê các đối thủ tiềm năng. Nếu có đối thủ "quân xanh quân đỏ" hoặc đối thủ có thế mạnh về giá/mối quan hệ, cần lưu ý kỹ.
+Phân loại nhóm đối thủ để có chiến lược ứng phó. Đây là thông tin tham khảo, thực tế khi mình đi đấu thầu ít có được thông tin về đối thủ trong giai đoạn này.
+Nhóm
+Đặc điểm
+Chiến lược ứng phó
+Nhóm "Gà nhà" (Incumbent)
+Đơn vị đang vận hành hệ thống cũ hoặc đã làm các giai đoạn trước. Họ hiểu nghiệp vụ nhưng thường có tâm lý chủ quan hoặc giá cao.
+Trong hồ sơ kỹ thuật, hãy xoáy sâu vào: Tính mở rộng, Khả năng tích hợp tương lai, Bảo mật theo chuẩn mới nhất. Nhấn mạnh rủi ro của việc "duy trì công nghệ lạc hậu".
+Nhóm "Hãng lớn" (Big Players)
+Năng lực cực mạnh, thương hiệu tốt nhưng bộ máy cồng kềnh, chi phí triển khai cao và ít linh hoạt theo yêu cầu lẻ của khách hàng.
+Xoáy sâu vào: Quy trình quản lý dự án, Chứng chỉ chuyên gia quốc tế, Cam kết SLA (thời gian xử lý sự cố). Đây là những thứ bên giá rẻ thường làm lấp liếm.
+Nhóm "Phá giá" (Low-cost Challengers)
+Các công ty mới nổi, sẵn sàng bỏ thầu giá thấp kỷ lục để lấy hồ sơ năng lực (Reference).
+Nhấn mạnh vào: Khả năng tùy chỉnh theo đặc thù riêng của Việt Nam, Đội ngũ hỗ trợ tại chỗ (On-site), Khả năng onsite.
+File Google Sheet (1) [HSDT] - Tên gói thầu trong folder của account: Sheet Đánh giá, so sánh đối thủ
+Đánh giá nguồn lực nội bộ (để làm hồ sơ dự thầu): Team có đang bận thầu khác không? Có đủ nhân sự chuyên môn để viết giải pháp thầu này không? Nếu không thì có giải pháp fast-tracking hay crashing nào không?
+Tính toán hiệu quả kinh tế (Sơ bộ): AM phụ trách
+1.3. Quyết định dự thầu Go/No-Go
+Họp phê duyệt nhanh: PD trình bày bảng tổng hợp thông tin đánh giá để anh Hùng với vai trò là BO sẽ đánh giá Go/No-Go.
+Ở Mobio, chỉ cần dự án có lãi hoặc đạt mục tiêu chiến lược, và chúng ta không phải "quân xanh", công ty đều sẽ tham dự
+GIAI ĐOẠN 2: PHÂN CÔNG & LẬP KẾ HOẠCH
+Mục tiêu: Thiết lập "phòng tuyến" chung >> thống nhất chiến thuật và kỷ luật tài liệu.
+2.1. Khởi tạo không gian làm việc chung
+PD chủ động tạo sớm, add các team liên quan tới việc làm thầu: PO, PD, EA, AM.
+Tùy nhu cầu và tình hình, có thể tạo thêm các group nhỏ với các bên khác như HR, Kế toán.
+2.2. Phân vai (RACI Matrix):
+Mỗi gói thầu bắt buộc phải có 1 PD đóng vai trò Primary Bid Manager, chịu trách nhiệm tổng quan và cuối cùng cho toàn bộ gói thầu. 
+Để một chiến dịch thầu diễn ra trơn tru, mọi thành viên phải tuân thủ tuyệt đối Ma trận RACI.
+R (Responsible - Người thực thi): Người trực tiếp thực hiện công việc.
+A (Accountable - Người chịu trách nhiệm/Quyết định): Người duyệt cuối cùng, chịu trách nhiệm cho kết quả đúng/sai. (Quy tắc: Chỉ có DUY NHẤT 1 người chữ A cho mỗi đầu việc).
+C (Consulted - Người tư vấn): Người cần được hỏi ý kiến, cung cấp thông tin trước và trong khi làm.
+I (Informed - Người được thông báo): Người chỉ cần nhận kết quả sau khi việc đã xong.
+Click the image to view the sheet.
+2.3. Lập Timeline ngược (T-Minus / Backward Planning)
+Để trị căn bệnh "sát sạt giờ", PD phải lập lịch đếm ngược từ ngày nộp thầu (Ngày D) và thông báo liên tục cho các bên, đồng thời làm tốt vai trò remove blockers:
+D-3 (Internal Review 1): Approver duyệt khung giải pháp và các ý chính (chỉ cần bullet points, chưa cần viết văn xuôi).
+D-2 (Draft 1 - Format Review): PD quét toàn bộ format. Ai viết sai Heading, sai Font, yêu cầu sửa ngay lập tức.
+D-1 (Final Review): Duyệt bản in/PDF cuối cùng. Không sửa nội dung lớn, chỉ sửa lỗi chính tả.
+D (Submission): Nộp thầu.
+2.4. Tạo Master File
+Chỉ có 1 Master File: PD tạo file Word/Slide từ Template chuẩn (đã set sẵn Style: Heading 1, 2, 3, Bullet points, Font, Spacing ...).
+Người viết KHÔNG Copy-Paste cả định dạng: Quy định mọi người khi dán nội dung từ file khác vào Master File phải chọn Paste as Plain Text hoặc Merge Formatting.
+Bold ý chính: Người viết phải chủ động bôi đậm các key message, ý chính hoặc điểm vượt trội của câu trả lời so với yêu cầu. Điều này giúp tổ chấm thầu "quét" (scan) và bắt được điểm cộng của Mobio nhanh nhất.
+GIAI ĐOẠN 3: THỰC THI VÀ XÂY DỰNG HỒ SƠ
+Mục tiêu: Sản xuất bộ hồ sơ "vở sạch chữ đẹp" và đúng luật.
+3.1. Chuẩn bị ban đầu (PD):
+Trước khi team bắt tay vào viết, PD phải đảm bảo:
+Khởi tạo Master File & Style Guide: Tạo file mẫu có sẵn Heading, Font, Màu sắc chuẩn để cả team thực thi trên một định dạng thống nhất.
+Hồ sơ Hành chính & Pháp lý: Thu thập Đăng ký kinh doanh, Hợp đồng tương tự (kèm Biên bản nghiệm thu/Thanh lý), Chứng chỉ nhân sự, ... tùy thuộc vào yêu cầu của CĐT.
+Lưu ý: Mọi bản sao cung cấp BẮT BUỘC phải có công chứng. Khi nộp Hợp đồng lao động, Bắt buộc phải che phần lương (hoặc chỉ nộp khung hợp đồng) vì đây là bảo mật thông tin nhạy cảm.
+Hồ sơ Năng lực & Nghiệp vụ:
+Tài liệu thuyết minh giải pháp: Phải có sơ đồ kiến trúc, quy trình triển khai, kế hoạch đào tạo và chuyển giao.
+Hồ sơ Tài chính:
+Báo giá: AM phối hợp với Team Dev để tính toán kỹ giá vốn (COGS), chi phí triển khai, quỹ dự phòng rủi ro và lợi nhuận kỳ vọng. Báo giá phải đi song song với giải pháp và kế hoạch triển khai để khớp đợt thanh toán (Milestones).
+Lưu ý: Anh Sơn là người làm báo giá, anh Hùng là người chốt. Thường anh Sơn làm báo giá rất chậm và sát nút, đôi khi sẽ có những rủi ro như nhập số liệu sai, cần phải điều chỉnh các tài liệu trong HDST. PD cần đặc biệt lưu ý theo sát và hỗ trợ.
+Bảo lãnh dự thầu: Làm sớm ít nhất 3 ngày trước khi nộp. Check kỹ từng chữ trong mẫu bảo lãnh của CĐT, tránh trường hợp phải làm lại.
+3.2. Tư duy viết
+Việc đoán định bộ phận nào của CĐT là người ra chủ trương thầu sẽ giúp team dự đoán được tỷ trọng điểm, từ đó căn cứ phân chia nguồn lực cho phù hợp.
+Định hướng hành văn (Tone & Mood) theo đối thủ cạnh tranh:
+Đánh với Salesforce/Pega (Global): Viết theo hướng "Giải pháp thiết kế riêng cho người Việt + Chi phí sở hữu thấp nhất + Tốc độ triển khai nhanh nhất".
+Đánh với FPT/GMO (Local/SI): Viết theo hướng "Kiến trúc lõi tiêu chuẩn Enterprise (Microservices, Kafka, MongoDB) + Khả năng xử lý hàng chục triệu Profile không độ trễ". Bắt buộc chèn thêm các tài liệu kỹ thuật, sơ đồ diagram phức tạp để "knock out" đối thủ.
+Trong thực tế, với những thầu lớn, Mobio sẽ gặp phải cả 2 nhóm đối thủ này. Do đó, định hướng hành văn sẽ cần kết hợp được cả 2 hướng trên.
+3.3. Viết Hồ sơ Dự thầu
+3.3.1. Tuyên bố đáp ứng
+Người viết cần tuyệt đối tuân thủ 4 quy tắc hành văn sau để không bị loại oan hoặc rơi vào "hố" chi phí:
+🎯 Trường hợp 1: Yêu cầu BẮT BUỘC (M - Must Have) nhưng Mobio phải Tùy biến (C) hoặc Đáp ứng 1 phần (P)
+BẮT BUỘC phải ghi rõ chi phí tùy biến đã nằm trong gói thầu. Nếu không, tổ chấm thầu sẽ đánh rớt vì sợ phát sinh chi phí hoặc dự án đi vào ngõ cụt. 
+Văn mẫu: "Chi phí tuỳ biến để đáp ứng hoàn toàn yêu cầu, đã được bao gồm trong giá chào của gói thầu."
+🎯 Trường hợp 2: Yêu cầu BẮT BUỘC (M) phải Tích hợp dữ liệu mới chạy được
+KHÔNG được ghi đáp ứng 1 phần. Vẫn tuyên bố Đáp ứng hoàn toàn, do bản chất dự án nào cũng phải tích hợp và chi phí đã nằm trong phí triển khai. 
+Văn mẫu: "Đáp ứng hoàn toàn. Điều kiện cần là phải tích hợp dữ liệu từ hệ thống [Core/LOS]..."
+🎯 Trường hợp 3: Yêu cầu TÙY CHỌN (O/Should/Nice to have) nhưng ta chưa có sẵn
+Bóc tách để báo giá Optional (CR) cho khách tự cân nhắc, giúp bảo vệ lợi nhuận. 
+Văn mẫu: "Đáp ứng nhưng ngoài phạm vi dự án. Customization phát sinh chi phí."
+🎯 Trường hợp 4: Tính năng của Mobio xịn hơn yêu cầu CĐT
+Mạnh dạn bôi đậm dòng chữ "Đáp ứng vượt trội!" (VD: Chịu tải lớn hơn, import file dung lượng cao hơn).
+3.3.2. Proposal
+Hiện tại Mobio có 2 nhánh giải pháp chính là Activation CDP và Smart CRM. Với mỗi nhánh giải pháp, PM đã đưa ra Tài liệu thuyết minh giải pháp, mức độ hoàn thiện khoảng 80% (kết quả của thầu SeABank và LPBank). PD cần dí PM hoàn thiện tài liệu giải pháp 100% :D
+Ngoài 2 nhánh giải pháp chính, anh Hùng đã có các bản tài liệu thuyết minh khác được tách nhỏ để không làm loãng cấu trúc của tài liệu thuyết minh giải pháp, gồm có: Tài liệu thuyết minh giải pháp Mobile App, Tài liệu thuyết minh Kiến trúc giải pháp, Tài liệu về Kinh doanh liên tục và & Phục hồi thảm họa.
+Đối với mỗi gói thầu:
+Primary PO có trách nhiệm rà soát nội dung của proposal sao cho phù hợp với phạm vi yêu cầu của CĐT.
+Primary PD có trách nhiệm checklist đủ các tài liệu proposal cần cung cấp sao cho phù hợp với phạm vi yêu cầu của CĐT.
+3.3.3. Các tài liệu bổ sung liên quan
+Đây là các tài liệu được CĐT yêu cầu để tăng tính thuyết phục cho Hồ sơ dự thầu. Nội dung của các tài liệu này tương đối đơn giản, PD có thể chủ động hoàn thiện sớm để trình ký anh Hùng và scan bản mềm để tránh cập rập.
+3.4. Kỹ năng Trình bày, Dẫn chiếu & Chèn Bằng chứng
+Highlight Keyword: Mọi keyword bán hàng mạnh, con số ấn tượng phải được bôi đậm hoặc đổi màu chữ để "đập" vào mắt người chấm.
+Không chém chay: Mọi tuyên bố "Đáp ứng hoàn toàn" BẮT BUỘC có ảnh chụp màn hình/Figma đi kèm để chứng minh.
+Khoanh đỏ: Tổ chấm thầu rất lười, không bắt họ tự tìm. Phải đánh dấu/khoanh đỏ đúng khu vực tính năng trên ảnh. Ảnh phải to, rõ, đặt in-cell và có text diễn giải bên dưới.
+Dẫn chiếu chi tiết: Cấm ghi chung chung. Phải ghi rõ format: Tên Tài liệu -> Chương -> Mục (thậm chí số trang/số hình).
+3.5. Xử lý Đặc thù & Cài cắm Kỹ thuật ngành BFSI
+Người viết thầu phải luôn tỉnh táo với các "bẫy" đặc thù của Ngân hàng:
+Lỗi Copy-Paste (Rất phổ biến): Tái sử dụng nội dung từ thầu cũ (ví dụ: copy từ SeABank sang OCB) nhưng quên sửa tên Ngân hàng. -> Tự bản thân người viết cần phải rà soát lại trước khi báo done, PD là team phụ trách review final.
+Cá nhân hóa từ ngữ: Phải sử dụng đúng thuật ngữ của từng ngân hàng. Thay thế toàn bộ từ "Doanh nghiệp" thành "Ngân hàng". Chú ý định nghĩa chức danh: RBO, SRBO, RM, CBB (Cán bộ bán)
+Xác định rõ đối tượng đọc và chấm thầu là ai. Giả sử như cùng là chức năng xem CHB, nhưng nếu khách hàng là KHCN và ảnh tham chiếu hoặc nội dung lại mô tả cả KHDN sẽ rất kém chuyên nghiệp.
+Hạ tầng (Cloud vs Hybrid): Khách ép dùng Native Services (như AWS RDS) sẽ làm bill hạ tầng tăng vọt (40-50K USD/năm). Cần chuẩn bị bảng so sánh ưu/nhược điểm và báo giá cả 2 phương án. Từ chối lập môi trường Dev/Test tại site khách hàng vì rủi ro bảo mật (tăng attack surface), chỉ cấp UAT và PROD.
+Pháp lý NHNN: Phải nắm rõ giới hạn pháp lý. CRM thường thuộc Cấp độ 3 (Thông tư 09), nhưng KHÔNG chịu sự điều chỉnh của Thông tư 50/77 (vì CRM không cung cấp dịch vụ Ngân hàng trực tuyến)
+Chi phí ẩn: Cảnh báo trước cho khách hàng về phí gọi API bên thứ 3 phát sinh cho các tính năng đọc OCR (Giấy phép KD, Hộ chiếu)
+3.6. Quy trình Làm rõ HSMT
+Nguyên tắc: Mọi điểm mờ  trong HSMT đều phải hỏi bằng văn bản và hỏi càng sớm càng tốt. Trong quá trình làm thầu, nếu có phát sinh thêm các vấn đề cần làm rõ, PD tổng hợp thông tin và gửi cho chủ đầu tư trước deadline. Lưu ý, khi đặt câu hỏi làm rõ, cần đặt khéo léo để tránh gây khó người trả lời.
+Mẹo "Bẻ lái": Nếu Spec đối thủ mạnh hơn mình, hãy đặt câu hỏi mang tính phản biện kỹ thuật để Chủ đầu tư (CĐT) nới lỏng Spec hoặc chấp nhận phương án tương đương của mình.
+GIAI ĐOẠN 4: KIỂM SOÁT CHẤT LƯỢNG & NỘP THẦU
+Mục tiêu: Chấm dứt tình trạng "Sếp làm thay" lúc nửa đêm. Tránh triệt để các lỗi ngớ ngẩn (sai tên ngân hàng, mâu thuẫn logic).
+Để giải quyết triệt để tình trạng người chịu trách nhiệm phải vất vả sửa từng chữ, hoặc phát hiện lỗi ngớ ngẩn ngay trước giờ đi in, quy trình review phải được chia thành 4 layer:
+Lớp 1: Self-Review (Người viết tự kiểm tra - Tối quan trọng)
+Người viết (PD/PO/EA) tuyệt đối không được nộp một bản nháp cho người duyệt.
+Lớp 2: Cross-Check / Peer Review (Review chéo) - đây là lạc quan, còn thường là không kịp
+Đổi chéo bài cho nhau (Ví dụ: PO làm phần KHCN đọc chéo bài của PO làm KHDN). Người ngoài luôn dễ nhìn ra lỗi sai (chính tả, logic) hơn người viết.
+Lưu ý: Soi thật kỹ sự mâu thuẫn. Ví dụ: Dòng trên bảo "Không làm", dòng dưới lại dẫn chứng ảnh "Đã làm".
+Lớp 3: Approver Review (Duyệt Chiến lược & Tổng thể)
+Approver chỉ tập trung duyệt Chiến lược trả lời (Văn phong đã đủ "đè" đối thủ chưa? Có làm lọt hố ngân sách không? Tuyên bố đáp ứng đã khớp với báo giá chưa?)
+Lớp 4: PD rà soát format và các lỗi thường gặp lần cuối
+PD rà soát format cho phù hợp với trang in, export PDF, cấu trúc hồ sơ theo yêu cầu của chủ đầu tư
+GIAI ĐOẠN 5: ĐÓNG GÓI & NỘP THẦU
+Mục tiêu: 0 lỗi hành chính. Hồ sơ phải đến tay Chủ đầu tư an toàn, đúng giờ.
+Luôn nộp trước deadline ít nhất 2-3 tiếng để dự phòng sự cố vận chuyển/hệ thống mạng. Đây là expectation của những người chịu trách nhiệm nộp thầu như PD, nhưng thường chúng ta luôn dính định luật Parkinson :D Để tránh tình trạng "sát sạt giờ", chúng ta cần quy tắc "T-Minus":
+5.1. Checklist rà soát (T-24h)
+Hiệu lực hồ sơ: Thường là 90-120 ngày.
+Hồ sơ giấy (Hardcopy): Có ký nháy từng trang không? Có đóng dấu giáp lai không?
+Nộp thầu qua mạng (E-bidding): Kiểm tra chữ ký số (Token) còn hạn không? 
+5.2. Đóng gói & Niêm phong (T-8h)
+Quy trình 2 túi: Thông thường, cần tách rõ Hồ sơ Kỹ thuật và Hồ sơ Tài chính vào các túi riêng. Bên cạnh đó, PD cần lưu ý các quy cách đóng gói cần được tuân thủ.
+Hoàn thiện việc in ấn/xuất file PDF. Không chỉnh sửa nội dung trong giai đoạn này trừ khi là lỗi cực kỳ nghiêm trọng.
+5.3. Xác nhận nộp thầu thành công:
+Lưu bằng chứng (biên bản nhận hồ sơ hoặc ảnh chụp màn hình hệ thống mạng đấu thầu quốc gia).
+GIAI ĐOẠN 6: BẢO VỆ GIẢI PHÁP & SAU THẦU (DEFENSE & POST-BID)
+Mục tiêu: Chứng minh năng lực thực tế và hoàn thiện thủ tục.
+6.1. Thuyết trình & POC (Proof of Concept)
+Lưu ý:
+PD cần chuẩn bị cho trường hợp này, đặc biệt là các yêu cầu trọng điểm trong RFP
+Với các yêu cầu hiện tại chưa có (đã nằm trong roadmap), cần trao đổi với team để chuẩn bị phương án thuyết trình/demo.
+Trong buổi thuyết trình/demo, cần chuẩn bị:
+Slide (Pitch Deck): Tập trung vào giá trị mang lại cho khách hàng và kinh nghiệm xử lý các bài toán tương tự. Không đọc lại Hồ sơ dự thầu.
+Demo: Chuẩn bị sẵn kịch bản.
+BẮT BUỘC phải dự phòng phương án Offline (hoặc Localhost/Video backup) nếu mạng tại chỗ CĐT lỗi.
+6.2. Làm rõ sau thầu
+CĐT sẽ gửi yêu cầu giải trình về giá hoặc kỹ thuật. Phải trả lời trong vòng 24-48h. 
+Câu trả lời phải bám sát hồ sơ đã nộp, không được thay đổi bản chất giải pháp.
+PHẦN 3: LESSON LEARNED & KNOWLEDGE BASE
+Đối thủ cạnh tranh hiện tại của Mobio 
+Họ là ai?
+Thị trường CRM/CDP cho Ngân hàng tại Việt Nam chia làm 3 nhóm chính. Mỗi nhóm có các điểm yếu riêng mà chúng ta cần xoáy sâu vào khi viết Hồ sơ dự thầu.
+Nhóm 1: Các "Gã khổng lồ" Toàn cầu
+Đại diện: Salesforce, Oracle, Pega Systems, Microsoft Dynamics. Đây là nhóm đối thủ đáng gờm nhất về mặt thương hiệu. Khách hàng (đặc biệt là C-level, top tier) thường mua nhóm này vì cảm giác "an toàn" 
+Click the image to view the sheet.
+Nhóm 2: Các nhà Tích hợp Hệ thống lớn
+Đại diện: FPT (FIS/FSoft), CMC, SVT... Nhóm này thường đóng vai trò là Đối tác triển khai (Partner) mang bán sản phẩm của Nhóm 1 (Salesforce) hoặc dùng một bộ Core tự build cũ để đi chào giá rẻ.
+Click the image to view the sheet.
+Nhóm 3: Các Vendor Local giá rẻ (The Low-cost Challengers)
+Đại diện: GMO, NextCRM, CloudGo, AHT... Nhóm này thường bám thầu bằng cách phá giá cực sâu, cam kết "cái gì cũng làm được" để lấy reference làm đẹp hồ sơ.
+Click the image to view the sheet.
+Với vai trò Pre-sales, ngoài việc phân tích đối thủ để viết RFP, chúng ta còn có thể sử dụng để làm gì?
+Đấu thầu trên mặt giấy (trả lời RFP) thực chất chỉ là bề nổi của tảng băng chìm. Trong môi trường B2B Enterprise khốc liệt như ngân hàng, nếu bạn chỉ phân tích đối thủ để "điền form cho hay", chúng ta đã mất đi 70% sức mạnh của vũ khí này.
+Dưới đây là 5 ý nghĩa quan trọng của việc phân tích đối thủ với vai trò Pre-sales:
+Thao túng cuộc chơi từ trong trứng nước (Giai đoạn "Cài thầu")
+Thắng thầu vinh quang nhất là thắng trước khi RFP được phát hành. Khi biết rõ đối thủ tiềm năng của mình là ai và điểm yếu của họ là gì, chúng ta sẽ tiếp cận Chủ đầu tư (CĐT) ở giai đoạn họ đang mông lung lập dự án và "tư vấn" để họ đưa những rào cản kỹ thuật vào thẳng Hồ sơ mời thầu.
+Ví dụ thực chiến: Bạn biết đối thủ là Salesforce (triển khai qua đối tác). Điểm yếu của họ là chi phí vận hành (CR) cao và thời gian sửa đổi lâu do phụ thuộc vào hãng. Bạn tư vấn cho CĐT đưa tiêu chí: "Nhà thầu phải làm chủ 100% source code, cam kết chi phí bảo hành, bảo trì trong năm đầu tiên bằng 0". Đối thủ đọc xong tiêu chí này chỉ có nước tự rút lui hoặc đánh rớt biên lợi nhuận.
+Định hình Chiến lược Giá (Pricing Strategy)
+Biết mình đang đánh với ai quyết định trực tiếp đến việc bạn sẽ báo giá bao nhiêu mà vẫn tối ưu được lợi nhuận.
+Đánh với "Gã khổng lồ" (Salesforce, Pega): Bạn biết giá của họ cực kỳ đắt. Bạn có thể báo giá ở mức "Premium" (giá cao nhưng vẫn rẻ hơn họ 30%), giúp công ty tối đa hóa lợi nhuận mà vẫn được CĐT coi là một "món hời".
+Đánh với "Giá rẻ" (GMO, CloudGo): Bạn biết họ sẽ phá giá. Bạn không được chạy đua xuống đáy. Thay vào đó, bạn bóc tách báo giá thành: Gói Basic (rẻ tương đương họ để đấu về giá) + Gói Advanced/Optional (chứa các tính năng phức tạp mà họ không làm được, ví dụ: Tính năng Agent App, Tích hợp Native AWS).
+Vũ khí Tấn công & Phòng thủ trong phòng Pitching/Demo
+Phân tích đối thủ giúp bạn chuẩn bị sẵn đạn dược cho vòng Thuyết trình bảo vệ giải pháp – nơi CĐT sẽ "quay" các nhà thầu.
+Phòng thủ: Bạn biết đối thủ sẽ chê bạn ở điểm nào (ví dụ: công ty local, quy mô nhỏ hơn). Bạn chuẩn bị sẵn slide phản công lại: "Chúng tôi là công ty Local đã có 9 năm kinh nghiệm với 50+ khách hàng, nên chúng tôi phản ứng sự cố trong 15 phút thay vì 24h chờ mở ticket quốc tế như hãng X".
+Tấn công: Bạn "mớm" cho những người ủng hộ bạn (Quân đỏ) trong tổ chấm thầu các "Kill Questions" để họ đi hỏi đối thủ. Ví dụ: "Hệ thống của các anh có khả năng data masking với PII không?"
+Nhận diện "Hệ sinh thái chính trị" (Stakeholder Mapping)
+Đấu thầu ngân hàng là đấu về chính trị nội bộ. Phân tích đối thủ giúp bạn nhận diện ai đang "chống lưng" cho ai.
+Ví dụ thực chiến từ case OCB của bạn: Bạn phân tích thấy đối thủ là các ông lớn Cloud, và phát hiện ra CIO/Cố vấn (Anirban) có thiên hướng cuồng Cloud Native AWS. Từ đó, bạn nhận ra rủi ro chính trị: "Người này có thể dùng kiến trúc Cloud để ưu ái đối thủ và đè giải pháp Hybrid của mình". Lập tức, team Tech phải vẽ ngay mô hình Native AWS + bảng tính chi phí (Sizing) để chặn đứng mọi lý do loại thầu từ vị Cố vấn này.
+Định hướng Roadmap Phát triển Sản phẩm (Product Development)
+Phân tích đối thủ trong các vụ thầu không chỉ phục vụ Sales mà còn là nguồn thông tin tham khảo tốt cho team Product (PO). Khi bạn thua một gói thầu, hoặc thấy CĐT liên tục yêu cầu một tính năng mà đối thủ có (ví dụ: Gamification, AI Next Best Action), bạn mang dữ liệu đó về để ép team Product đưa vào Roadmap, đảm bảo lần thầu sau mình không còn lỗ hổng.
+Như vậy, việc phân tích đối thủ là thứ phải nằm trên bàn của Sales, Presales, Tech Lead và cả Ban Giám đốc trong suốt toàn bộ chiến dịch thầu, chứ không chỉ lúc hì hục điền file Excel.
+PHẦN 4: (ON-GOING)
+Phía dưới đây là chi tiết tiêu chuẩn các công việc thực hiện ở phía trên. Tại sao lại là on-going? Vì nó nhiều vô cùng :D nghĩ 1 lúc cũng không ra hết được, phải reverse engineering và prompt engineering. Những thông tin ở đây đang ở trạng thái vụn vặn, rải rác, mục tiêu sẽ ra 1 phiên bản mà cả con người và AI đều dùng được.
+Đang xây dựng WF với techstack: n8n, AI Agent, Lark Base, Google Drive
+Phân loại yêu cầu - Agent Strategist + Classifier + Extractor
+Đọc RFP, nhặt case study, lập backbone và chia batch.
+You are a Lead Solution Architect specializing in Enterprise CRM for BFSI. 
+Your mindset is strategic and defensive.
+TASK:
+Analyze RFP & Extract Backbone: Define the "Inviolate Context" (Tech Stack, Deployment, Security Standards).
+Identify "Kill-switch" (Red Flags): Scan for mandatory requirements that are unfavorable or impossible (e.g., Source code handover, specific rare certifications).
+Thematic Grouping: Categorize 300+ requirements into batches (Technical, Business, Security, HR) to ensure consistency end-to-end.
+OUTPUT:
+A Strategy Backbone (JSON/Table) that all subsequent Agents MUST follow.
+Identification of "Incumbent", "Big Players", or "Low-cost" competitors to adjust the tone.
+Viết tuyên bố đáp ứng - Agent Writer + Formatter
+Viết nội dung chuẩn kỹ thuật và tự động in đậm, chỉnh Heading theo Style Guide.
+You are a Senior Pre-sales Expert at Mobio. You write RFP responses that sell "Safety" and "Reliability".
+GUIDING PRINCIPLES:
+No Marketing Fluff: Prioritize logic, evidence, and banking-specific context.
+Formatting (Mandatory): - Bold key messages and superior features ("Đáp ứng vượt trội!").
+Use proper Headings (H1, H2, H3) as per Mobio Master Template.
+Insert image placeholders with clear ID references.
+Tone & Mood: - Use "Ngân hàng" instead of "Doanh nghiệp".
+Adjust tone based on competitors identified by the Lead Architect.
+RESPONSE MATRIX (STRICT):
+Case C (Customized): Must state cost is included in the bid.
+Case P (Partial/Integration): Declare "Fully Supported" but specify integration dependencies.
+Case O (Optional): Quote as a Change Request (CR) to protect profit.
+Chấm điểm/Review - Agent Auditor + Consistency Checker
+Chấm điểm từng dòng
+Chấm consistency theo batch
+You are a Senior RFP Evaluator for BFSI. Your default mindset is SKEPTICISM.
+EVALUATION PRINCIPLES:
+Distinguish clearly between Native, Configurable, and Customization.
+Zero Tolerance for Copy-Paste Errors: Check for wrong bank names or outdated terminology.
+Consistency Check: Ensure Row 300 does not contradict Row 1 regarding architecture or SLA.
+SCORING MODEL (1–10):
+Score 9–10: Fully supported, proven, Bolded key messages, and clear evidence.
+Score 5–6: Moderate customization required; check if the vendor admitted "Cost included".
+Score 0–1: Vague, marketing language, or Wrong Client Name()().
+OUTPUT FORMAT:
+Requirement & Vendor Claim Summary.
+Capability Classification.
+Gap & Consistency Analysis: Highlight if this response conflicts with other items in the batch.
+Banking Context Validation: Retail/SME/Corporate fit
+Score & Justification: Sharp, evidence-based reasoning.
+Note
+Nếu thấy AI Writer viết hay nhưng định dạng vẫn lem nhem -> Mới tách thêm con Formatter.
+Nếu thấy AI Auditor chấm điểm tốt nhưng vẫn để lọt mâu thuẫn giữa các Batch -> Mới thêm bước Consistency.
+1. Checklist Nội dung & Chiến lược (The Content Logic)
+Click the image to view the sheet.
+2. Checklist Hình ảnh & Bằng chứng (Evidence)
+Click the image to view the sheet.
+3. Checklist Hình thức & Thẩm mỹ (Format)
+Click the image to view the sheet.
+Cấu trúc câu trả lời RFP mẫu
+Cụ thể hóa các mẫu cho 4 trường hợp bạn đã nêu trong Playbook:
+Mẫu Tùy biến (C): Phải kèm câu khẳng định về chi phí đã bao gồm trong gói thầu. 
+Mẫu Tích hợp (P): Khẳng định đáp ứng hoàn toàn và nêu rõ điều kiện cần về dữ liệu. 
+Mẫu Vượt trội: Cách dùng từ để "khoe" tính năng xịn hơn yêu cầu.
+Style Guide
+Quy tắc In đậm: AI sẽ in đậm những loại từ khóa nào? (Ví dụ: Các con số %, tên công nghệ lõi như Kafka/Microservices, các cam kết về thời gian SLA). 
+Quy chuẩn Ảnh: Kích thước hiển thị (Width 100%), vị trí đặt chú thích ảnh (nằm dưới hay trên ảnh), và cách đánh số thứ tự hình ảnh. 
+Cấu trúc Heading: Quy định cấp độ (H1 cho tên chương, H2 cho mục lớn) để đảm bảo Master File không bị loạn định dạng.
+Master Context
+Techstack chuẩn của Mobio: (Java, Spring Boot, PostgreSQL, AWS...). 
+Danh sách thuật ngữ BFSI tương ứng: (VD: Nếu thầu OCB thì dùng RM, CBB; nếu thầu khác dùng tên khác).
+Chiến lược đối thủ: Nếu đối thủ là Salesforce thì ưu tiên nhấn mạnh "Làm chủ 100% source code".
+Quy trình Xử lý Tài liệu bổ sung
+Một bảng danh mục ảnh/Figma được đánh mã (ID).

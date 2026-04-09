@@ -1,0 +1,55 @@
+[
+  {
+    "category": "Năng lực nhân sự",
+    "keywords": [
+      "chứng chỉ chuyên môn hiếm",
+      "PMP",
+      "CCIE",
+      "AWS Solutions Architect Professional",
+      "CISSP",
+      "số năm kinh nghiệm cụ thể",
+      "15 năm kinh nghiệm",
+      "hợp đồng lao động "
+    ],
+    "description": "Các yêu cầu nhằm chặn nhà thầu ngoài hoặc ép có nhân sự chuyên gia cao cấp không cần thiết.",
+    "action": "Báo động PD/AM. Cân nhắc dùng chứng chỉ tương đương hoặc raise câu hỏi làm rõ HSMT."
+  },
+  {
+    "category": "Kinh nghiệm thực hiện",
+    "keywords": [
+      "hợp đồng duy nhất",
+      "giá trị hợp đồng"
+    ],
+    "description": "Yêu cầu 1 hợp đồng có giá trị bằng 70-80% giá gói thầu hiện tại.",
+    "action": "Báo động. Kiểm tra xem có thể gộp hợp đồng hoặc đàm phán giảm tỷ lệ xuống nếu là khách quen."
+  },
+  {
+    "category": "Kỹ thuật và Công nghệ",
+    "keywords": [
+      "bàn giao source code",
+      "bàn giao mã nguồn"
+    ],
+    "description": "Bất lợi nghiêm trọng, trái với mô hình SaaS của Mobio.",
+    "action": "STOP. Chắc chắn phải đàm phán hoặc raise câu hỏi để hủy yêu cầu này, hoặc chuyển sang báo giá hạng mục mua đứt rất cao."
+  },
+  {
+    "category": "Công nghệ lõi",
+    "keywords": [
+      "Oracle",
+      "IBM",
+      "Windows Server"
+    ],
+    "description": "Đòi hỏi phần mềm phải chạy trên CSDL hoặc HĐH hãng cụ thể mà không chấp nhận bản tương đương.",
+    "action": "Gợi ý CĐT nới lỏng spec (ví dụ: 'chấp nhận Oracle hoặc tương đương')."
+  },
+  {
+    "category": "Chứng chỉ sản phẩm",
+    "keywords": [
+      "ISO/IEC 25010",
+      "CMMI",
+      "Pentest từ đơn vị chỉ định"
+    ],
+    "description": "Yêu cầu các chuẩn quốc tế để làm khó nhà thầu nội.",
+    "action": "Kiểm tra xem Mobio có chứng chỉ này không, hoặc có thể thay thế bằng ISO 27001/chứng nhận đánh giá nội bộ."
+  }
+]

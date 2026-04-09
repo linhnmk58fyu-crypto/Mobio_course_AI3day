@@ -1,0 +1,31 @@
+{
+  "general_terms": {
+    "CĐT": "Chủ đầu tư (Đơn vị phát hành gói thầu)",
+    "RFP": "Hồ sơ mời thầu (HSMT)",
+    "Tuyên bố đáp ứng": "Bảng trả lời của Mobio đối với từng yêu cầu trong RFP",
+    "CR": "Change Request (Yêu cầu thay đổi/Tùy biến phát sinh)",
+    "BCP": "Business Continuity Plan (Kế hoạch kinh doanh liên tục)",
+    "DRP": "Disaster Recovery Plan (Phục hồi sau thảm họa)",
+    "OCR": "Optical Character Recognition (Nhận diện ký tự quang học)"
+  },
+  "roles": {
+    "PD": "Project Delivery / Primary Bid Manager (Nhạc trưởng gói thầu)",
+    "PO": "Product Owner (Phụ trách Yêu cầu Nghiệp vụ)",
+    "EA": "Enterprise Architect / Solution Architect (Phụ trách Yêu cầu Kỹ thuật)",
+    "AM": "Account Manager / Sales (Phụ trách Báo giá & Khách hàng)"
+  },
+  "bank_mapping": {
+    "default": {
+      "business": "Ngân hàng",
+      "customer_retail": "Khách hàng cá nhân (KHCN)",
+      "customer_corporate": "Khách hàng doanh nghiệp (KHDN)"
+    },
+    "OCB": {
+      "sales_staff": "RM",
+      "branch_manager": "RBO"
+    },
+    "VIB": {
+      "sales_staff": "Cán bộ tín dụng (CBTD)"
+    }
+  }
+}
