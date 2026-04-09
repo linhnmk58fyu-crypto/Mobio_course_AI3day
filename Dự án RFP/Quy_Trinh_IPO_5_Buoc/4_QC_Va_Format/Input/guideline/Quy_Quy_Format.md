@@ -1,0 +1,1 @@
+Chữ 12/Arial/In đậm dòng 1

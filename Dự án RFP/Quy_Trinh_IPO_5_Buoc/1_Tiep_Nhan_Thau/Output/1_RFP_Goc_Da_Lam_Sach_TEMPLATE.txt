@@ -1,0 +1,2 @@
+# Bản nháp giữ chỗ (Template)
+Đây là File định dạng `.TXT` lưu giữ nội dung của hồ sơ RFP gốc đã được dọn rác OCR. File này sẽ là nguồn để AI gõ truy vấn.
