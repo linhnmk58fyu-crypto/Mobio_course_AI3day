@@ -1,3 +1,0 @@
-- [x] Tạo folder sprint `sprint_xoa_dong_undefined`.
-- [ ] Comment/xóa đoạn xử lý ngoại lệ 'Cần xác định' trong file source code.
-- [ ] Chạy lại code test và xác nhận.

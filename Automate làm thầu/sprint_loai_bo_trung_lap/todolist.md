@@ -1,4 +1,0 @@
-- [x] Tạo folder sprint `sprint_loai_bo_trung_lap`.
-- [ ] Bổ sung/điều chỉnh yêu cầu trong `quytrinh.md`.
-- [ ] Nâng cấp tính năng Loại bỏ trùng lặp trong `extract_checklist.py`.
-- [ ] Chạy lại code test và xác nhận.

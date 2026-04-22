@@ -1,6 +1,0 @@
-- [x] Tạo folder sprint `sprint_tao_cau_truc_checklist`
-- [ ] Tham khảo nội dung `quytrinh.md`
-- [ ] Tạo folder `INPUT` và `OUTPUT` trong `checklist_tailieu`
-- [ ] Trích xuất bảng tạo thành file `mapping_tu_khoa.csv`
-- [ ] Tạo script code `extract_checklist.py` thực hiện quy trình.
-- [ ] Tạo file `run.bat`.
