@@ -1,0 +1,4 @@
+FileName_Keyword,SheetName_Keyword,Col_Requirement,Col_Response,Start_Row,Tag_Hint
+EIB,Tuyên bố đáp ứng,C,I,6,nghiệp vụ
+EIB,Tuyên bố đáp ứng,C,I,202,kỹ thuật
+EIB,Năng lực và kinh nghiệm,C,F,7,

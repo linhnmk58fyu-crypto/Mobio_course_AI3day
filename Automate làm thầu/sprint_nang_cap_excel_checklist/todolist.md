@@ -1,0 +1,4 @@
+- [x] Tạo sprint folder `sprint_nang_cap_excel_checklist`.
+- [ ] Phân tích cấu trúc file Excel input.
+- [ ] Cập nhật `extract_checklist.py` cho phép đọc `*.xlsx`.
+- [ ] Test chạy thử và xác nhận output CSV.

@@ -1,0 +1,2 @@
+- [x] Tạo sprint folder: sprint_tao_checklist_tailieu
+- [x] Tạo thư mục theo yêu cầu: checklist_tailieu trong Automate làm thầu
